@@ -16,12 +16,31 @@
     </parent>
 
     <properties>
-        <kotlin.version>1.2.71</kotlin.version>
+<!--        <kotlin.version>1.2.71</kotlin.version>-->
+        <kotlin.version>1.3.50</kotlin.version>
     </properties>
 
+<!--
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+-->
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
@@ -175,7 +194,12 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
-
+        <dependency>
+            <groupId>io.kotlintest</groupId>
+            <artifactId>kotlintest-runner-junit5</artifactId>
+            <version>3.3.2</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
